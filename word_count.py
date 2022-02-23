@@ -1,3 +1,5 @@
+# Michael Hofbauer ~ hofbauer@uab.edu
+
 # Method to find word frequencies in a text file.
 # The goal is to provide a program, which is
 # efficient when searching the text file more than once.
@@ -12,6 +14,9 @@
 # 2. Create further partition elements for words in list_of_words, e.g. first
 # and last letter of current word.
 
+# For a highly efficient version 
+# refer to the Counter class from the Collections module: 
+# https://code.activestate.com/recipes/576611/
 
 from string import ascii_lowercase as s_1
 from string import ascii_uppercase as s_2
@@ -36,15 +41,9 @@ with open(file_path) as f:
             list_of_words.append(temp_word)
             temp_word = ''
 
-    # print('\n',list_of_words,'\n')
-
-    # no_of_words = {i:[] for i in range(1,len(list_of_words))}
     no_of_words = {}
-    # length = len(list_of_words)
-
+    
     for word in list_of_words:
-        # list_of_words.remove(word)
-        # print(list_of_words)
         # Comment:
         # For some reason, words variable always jumps one list item ahead.
         for j in range(1,len(list_of_words)):
